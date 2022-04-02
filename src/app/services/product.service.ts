@@ -6,14 +6,11 @@ import { Product } from '../models/product';
 import { ResponseModel } from '../models/responseModel';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductService {
-
-  private apiUrl: 'https://localhost:44306/api/';
-  constructor(private httpClient:HttpClient) {
-    
-  }
+  apiUrl = 'https://localhost:44306/api/';
+  constructor(private httpClient: HttpClient) { }
 
   getProducts(): Observable<ListResponseModel<Product>> {
     let newPath = this.apiUrl + 'Products/getall';
